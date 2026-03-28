@@ -1,0 +1,25 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Research OS",
+  "version": "0.1.0",
+  "description": "Open research platform for quantitative social-science analysis.",
+  "codeRepository": "https://github.com/your-org/research-os",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "programmingLanguage": [
+    "Python"
+  ],
+  "applicationCategory": "Research Software",
+  "keywords": [
+    "research software",
+    "social science",
+    "statistics",
+    "reproducibility",
+    "streamlit"
+  ],
+  "operatingSystem": [
+    "Windows",
+    "Linux",
+    "macOS"
+  ]
+}

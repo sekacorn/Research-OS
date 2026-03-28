@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*.so
+
+# Virtual env
+.venv/
+venv/
+env/
+.python-version
+
+# Environment variables
+.env
+.env.*
+.env.local
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+research_os.egg-info/
+
+# Local storage (research OS)
+storage/library.db
+storage/papers/
+storage/*.db
+storage/*.sqlite
+storage/tmp/
+storage/exports/
+storage/tmp/runtime/
+*.pid
+
+# Research datasets
+data/*.csv
+data/*.xlsx
+data/*.parquet
+data/*.ods
+data/*.xls
+!data/sample_students.csv
+
+# Reports / exports
+reports/
+exports/
+*.html
+
+# Testing + tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+pytest-cache-files-*/
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+pip_install.log
+pytest.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Notebooks
+.ipynb_checkpoints/

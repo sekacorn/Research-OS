@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use Research OS in scholarly work, please cite the software using this metadata."
+title: "Research OS"
+type: software
+version: 0.1.0
+abstract: "Open research platform for quantitative social-science analysis."
+license: MIT
+authors:
+  - family-names: "Research OS Contributors"
+repository-code: "https://github.com/your-org/research-os"
+keywords:
+  - research software
+  - social science
+  - statistics
+  - reproducibility
+  - streamlit

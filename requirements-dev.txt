@@ -1,0 +1,19 @@
+# Testing
+pytest
+pytest-cov
+httpx
+
+# Linting
+ruff
+
+# Type checking
+mypy
+types-requests
+types-python-dateutil
+
+# Formatting
+black
+
+# Dev utilities
+ipython
+pre-commit

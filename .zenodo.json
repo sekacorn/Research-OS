@@ -1,0 +1,19 @@
+{
+  "title": "Research OS",
+  "description": "Open research platform for quantitative social-science analysis.",
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "research software",
+    "social science",
+    "statistics",
+    "reproducibility",
+    "streamlit"
+  ],
+  "creators": [
+    {
+      "name": "Research OS Contributors"
+    }
+  ]
+}

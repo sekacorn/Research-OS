@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-os"
+version = "0.1.0"
+description = "Open research platform for quantitative social-science analysis"
+requires-python = ">=3.10"
+keywords = ["research", "social science", "statistics", "open access", "reproducibility"]
+
+dependencies = [
+  # Core data stack
+  "pandas",
+  "numpy",
+  "scipy",
+  "statsmodels",
+
+  # Visualization / UI
+  "streamlit",
+  "matplotlib",
+  "plotly",
+
+  # API layer
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic",
+
+  # Literature + network
+  "requests",
+  "bibtexparser",
+  "pypdf",
+  "pdfplumber",
+
+  # Storage (SQLite is built-in, but this helps structured usage)
+  "sqlalchemy",
+
+  # Spreadsheet I/O support for Data tab uploads
+  "openpyxl",
+  "xlrd",
+  "odfpy",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --basetemp=C:/Users/sekac/AppData/Local/Temp/pytest-codex"
+
+[tool.setuptools.packages.find]
+include = ["stats_engine*", "literature*"]
