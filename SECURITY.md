@@ -1,48 +1,73 @@
-# Security Policy
+# Security
 
-## Supported Versions
+Research OS is a local-first research tool. It is not hardened as a production, multi-user, regulated, or internet-facing service by default.
 
-Security updates are provided on a best-effort basis for the current public version of Research OS on the default branch.
+## Reporting Vulnerabilities
 
-| Version | Supported |
-| --- | --- |
-| Current default branch | Yes |
-| Older snapshots and forks | No |
+Please report security issues privately instead of opening a public issue with exploit details.
 
-## Reporting a Vulnerability
+No security email, maintainer email, or private vulnerability reporting contact is present in this repository. If this project is hosted on a platform that supports private vulnerability reports, use that feature. If no private channel is available, open a minimal public issue that says a vulnerability exists and asks for a private contact, but do not include sensitive details, exploit code, private data, or destructive steps.
 
-If you believe you have found a security issue, please report it privately instead of opening a public issue.
+Include when possible:
 
-Include the following when possible:
+- affected component or file path;
+- short description of the issue;
+- safe reproduction steps;
+- likely impact;
+- suggested fix or mitigation, if known.
 
-- a short description of the issue
-- the affected component or file path
-- steps to reproduce
-- expected impact
-- any proof-of-concept details needed to verify the report safely
+## Data Not To Use In Demos
 
-Please avoid:
+Use the synthetic sample dataset in `data/sample_students.csv` or other fake/de-identified data for demos.
 
-- posting exploit details in public issues
-- including sensitive personal data in reports
-- running destructive tests against systems you do not own
+Do not use demo deployments with:
 
-## Response Expectations
+- personal data or direct identifiers;
+- student records protected by institutional policy or education law;
+- health, clinical, benefits, legal, immigration, financial, or employment records;
+- confidential nonprofit client data;
+- sensitive public-sector, infrastructure, or security data;
+- proprietary unpublished research data without approval.
 
-Reports will be reviewed on a best-effort basis.
+## Current Security Posture
 
-If the issue is confirmed, the project maintainer may:
+Current support in the repo:
 
-- acknowledge the report
-- reproduce and assess severity
-- prepare a fix
-- publish a coordinated update when ready
+- local-first storage under `storage/`;
+- local datasets, exports, runtime files, PDFs, and databases ignored by Git;
+- no built-in user accounts or cloud dependency;
+- OA-only PDF download enforcement;
+- report HTML escaping tests;
+- pytest coverage for core data, stats, literature, and API/UI flows;
+- startup scripts that bind services to `127.0.0.1` by default.
 
-## Scope Notes
+Important gaps:
 
-This project is intended for local-first research workflows. The highest-priority security concerns are:
+- no authentication or authorization;
+- no role-based access control;
+- no TLS configuration;
+- no production CORS policy;
+- no audit logging system;
+- no rate limiting;
+- no backup or restore workflow;
+- no dependency scanning or SBOM workflow;
+- no formal penetration test or secure deployment guide.
 
-- accidental exposure of local research data
-- insecure handling of downloaded files or PDFs
-- dependency-related vulnerabilities in the Python stack
-- unsafe future changes to API or file-handling behavior
+## Production Hardening Checklist
+
+Before production or shared use:
+
+- bind services behind a trusted reverse proxy;
+- enable TLS;
+- add authentication and authorization;
+- restrict CORS and network exposure;
+- protect `storage/` with filesystem permissions;
+- define retention and deletion rules for datasets, PDFs, notes, exports, and reports;
+- add audit logs for uploads, downloads, exports, and literature actions;
+- scan dependencies with an approved tool;
+- pin and review dependencies for deployment;
+- run tests and security checks in CI;
+- add backups and restore testing for `storage/`;
+- review PDF handling and file upload limits;
+- review generated reports for accidental disclosure;
+- complete privacy, accessibility, legal, and methods review.
